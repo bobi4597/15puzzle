@@ -12,7 +12,6 @@ const StyledPuzzle = styled.div`
 const Row = styled.div`
   display: inline-flex;
   flex-direction: row;
-  justify-content: space-even;
 `;
 
 const Cell = styled.div`
@@ -29,10 +28,13 @@ const Cell = styled.div`
 })};
 `;
 
-const Puzzle = ({ board }) => {
+const Puzzle = ({ board, moveTileAtPosition }) => {
   const rows = board.map((row, rowIndex) => (
     <Row key={rowIndex}>
-      {row.map((value, colIndex) => <Cell key={colIndex} value={value}>{value !== 0 ? value : ''}</Cell>)}
+      {row.map((value, colIndex) =>
+        <Cell key={colIndex}
+              onClick={() => moveTileAtPosition(rowIndex, colIndex)}
+              value={value}>{value !== 0 ? value : ''}</Cell>)}
     </Row>
   ));
 

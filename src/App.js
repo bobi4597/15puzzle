@@ -12,10 +12,18 @@ class App extends Component {
     }
   }
 
+  moveTileAtPosition(rowIndex, colIndex) {
+    this.gameController.moveTile(rowIndex, colIndex);
+    this.setState({
+      ...this.state,
+      board: this.gameController.getBoard(),
+    })
+  }
+
   render() {
     const { board } = this.state;
     return (
-      <Puzzle board={board} />
+      <Puzzle board={board} moveTileAtPosition={(rowIndex, colIndex) => this.moveTileAtPosition(rowIndex, colIndex)}/>
     );
   }
 }
