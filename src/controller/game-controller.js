@@ -1,7 +1,7 @@
 import { initializeBoard } from './logic/puzzle-initializer';
 import {shuffleBoard} from "./logic/puzzle-shuffler";
-import {isSolved} from "./logic/puzzle-solver";
-import {printPuzzle} from "./logic/puzzle-printer";
+import {isSolved, solve} from './logic/puzzle-solver';
+import {printPuzzle} from './logic/puzzle-printer';
 import {moveTile} from "./logic/tile-mover";
 
 export default class GameController {
@@ -26,6 +26,10 @@ export default class GameController {
 
   isPuzzleSolved() {
     return isSolved(this.board);
+  }
+
+  solvePuzzle() {
+    return solve(this.board);
   }
 
   printPuzzle() {

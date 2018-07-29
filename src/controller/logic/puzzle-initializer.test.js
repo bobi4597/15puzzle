@@ -3,8 +3,9 @@ import { initializeBoard } from './puzzle-initializer';
 describe ('Tests for the puzzle initializer', () => {
 
   it ('Should initialize a board with size 2', () => {
+    // Given/When
     const board = initializeBoard(2);
-
+    // Then
     expect(board.length).toEqual(2);
     board.forEach(row => expect(row.length).toEqual(2));
 
@@ -15,8 +16,9 @@ describe ('Tests for the puzzle initializer', () => {
   });
 
   it ('Should initialize a board with size 3', () => {
+    // Given/When
     const board = initializeBoard(3);
-
+    // Then
     expect(board.length).toEqual(3);
     board.forEach(row => expect(row.length).toEqual(3));
 
@@ -32,8 +34,9 @@ describe ('Tests for the puzzle initializer', () => {
   });
 
   it ('Should initialize a board with size 4', () => {
+    // Given/When
     const board = initializeBoard(4);
-
+    // Then
     expect(board.length).toEqual(4);
     board.forEach(row => expect(row.length).toEqual(4));
 
@@ -56,8 +59,9 @@ describe ('Tests for the puzzle initializer', () => {
   });
 
   it ('Should initialize a board with size 4 when no parameter is passed', () => {
+    // Given/When
     const board = initializeBoard();
-
+    // Then
     expect(board.length).toEqual(4);
     board.forEach(row => expect(row.length).toEqual(4));
   });

@@ -3985,6 +3985,10 @@ js-base64@^2.1.9:
   version "2.4.8"
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-2.4.8.tgz#57a9b130888f956834aa40c5b165ba59c758f033"
 
+js-priority-queue@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/js-priority-queue/-/js-priority-queue-0.1.5.tgz#f71e9b2120c91e8a1ddab3b7d347dac01d81e837"
+
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
   resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
