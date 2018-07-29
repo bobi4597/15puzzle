@@ -1,5 +1,6 @@
 import {findEmptyTilePosition, swap} from './common-utils';
 import directions from './directions';
+import {isSolved} from "./puzzle-solver";
 
 const NUMER_OF_SHUFFLES = 100;
 
@@ -13,7 +14,7 @@ export const shuffleBoard = (board) => {
   const emptyTile = findEmptyTilePosition(board);
 
   let shuffleCounter = 0;
-  while (shuffleCounter < NUMER_OF_SHUFFLES) {
+  while (shuffleCounter < NUMER_OF_SHUFFLES || isSolved(board)) {
     const directionIndex = Math.floor(Math.random() * 4);
     const direction = directions[directionIndex];
 
