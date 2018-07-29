@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import Puzzle from './view/Puzzle';
 import GameController from "./controller/game-controller";
+
+const PuzzleWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+`;
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.gameController = new GameController(4);
+    this.gameController = new GameController(3);
     this.state = {
       board: this.gameController.getBoard(),
     }
@@ -23,7 +29,12 @@ class App extends Component {
   render() {
     const { board } = this.state;
     return (
-      <Puzzle board={board} moveTileAtPosition={(rowIndex, colIndex) => this.moveTileAtPosition(rowIndex, colIndex)}/>
+      <PuzzleWrapper>
+        <Puzzle board={board}
+                moveTileAtPosition={(rowIndex, colIndex) => this.moveTileAtPosition(rowIndex, colIndex)}
+                isSolved={this.gameController.isPuzzleSolved()}
+        />
+      </PuzzleWrapper>
     );
   }
 }

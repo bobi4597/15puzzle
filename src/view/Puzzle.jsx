@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { switchProp } from 'styled-tools';
 
+const PuzzleSolvedIndicator = styled.div`
+  border: 20px solid ${switchProp('isSolved', {
+    true: 'green',
+    false: 'red',
+  })};
+`;
+
 const StyledPuzzle = styled.div`
   display: inline-flex;
   flex-direction: column;
@@ -28,7 +35,7 @@ const Cell = styled.div`
 })};
 `;
 
-const Puzzle = ({ board, moveTileAtPosition }) => {
+const Puzzle = ({ board, moveTileAtPosition, isSolved }) => {
   const rows = board.map((row, rowIndex) => (
     <Row key={rowIndex}>
       {row.map((value, colIndex) =>
@@ -38,7 +45,11 @@ const Puzzle = ({ board, moveTileAtPosition }) => {
     </Row>
   ));
 
-  return <StyledPuzzle>{rows}</StyledPuzzle>
+  return (
+    <PuzzleSolvedIndicator isSolved={isSolved}>
+      <StyledPuzzle>{rows}</StyledPuzzle>
+    </PuzzleSolvedIndicator>
+  );
 };
 
 export default Puzzle;
