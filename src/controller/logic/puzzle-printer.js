@@ -7,7 +7,6 @@
  * [   7       8]
  */
 export const printPuzzle = (board) => {
-  const size = board.length;
   let output = '';
   board.forEach(row => {
     output = output.concat('[');

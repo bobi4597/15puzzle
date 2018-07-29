@@ -13,7 +13,7 @@ export const findEmptyTilePosition = (board) => {
       }
     }
   }
-  throw 'Invalid board: there is no empty tile.';
+  throw new Error('Invalid board: there is no empty tile.');
 };
 
 /**

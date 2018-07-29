@@ -1,4 +1,4 @@
-import {findEmptyTilePosition, swap} from "./common-utils";
+import { swap } from "./common-utils";
 import directions from "./directions";
 
 /**
