@@ -18,7 +18,7 @@ export default class GameController {
   }
 
   moveTile(rowIndex, colIndex) {
-    // fixme: should move the tile at the given location (if possible)
+    return moveTile(this.board, rowIndex, colIndex);
   }
 
   isPuzzleSolved() {
