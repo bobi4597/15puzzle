@@ -1,5 +1,8 @@
 # The 15 Puzzle Game
 
+## Online version
+Try it here: [https://bobi4597.github.io/15puzzle/](https://bobi4597.github.io/15puzzle/)
+
 ## Clone and Install
 
 Open a terminal and run the following commands:

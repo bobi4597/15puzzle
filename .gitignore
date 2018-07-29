@@ -3,6 +3,12 @@
 .idea/tasks.xml
 *.iws
 
+# Mac files
+.DS_Store
+
+# Build output folder
+build
+
 # Logs
 logs
 *.log
