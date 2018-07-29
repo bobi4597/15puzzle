@@ -1,7 +1,9 @@
+import { initializeBoard } from './logic/puzzle-initializer';
+
 export default class GameController {
   constructor(size) {
-    this.board = [[]];
-    // fixme: initialize the board
+    this.board = initializeBoard(size);
+    // fixme: also shuffle the board
   }
 
   getBoard() {
