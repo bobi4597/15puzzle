@@ -19,7 +19,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.gameController = new GameController(3);
+    this.gameController = new GameController(4);
     this.state = {
       board: this.gameController.getBoard(),
     }
