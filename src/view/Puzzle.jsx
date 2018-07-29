@@ -28,7 +28,7 @@ const Cell = styled.div`
   line-height: 40px;
   text-align: center;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   background-color: #ffffcc;
