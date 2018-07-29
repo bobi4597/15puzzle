@@ -8,6 +8,13 @@ const PuzzleWrapper = styled.div`
   flex-direction: column;
 `;
 
+const StyledButton = styled.button`
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px; 
+`;
+
 class App extends Component {
 
   constructor(props) {
@@ -16,6 +23,14 @@ class App extends Component {
     this.state = {
       board: this.gameController.getBoard(),
     }
+  }
+
+  restartGame() {
+    this.gameController.resetPuzzle();
+    this.setState({
+      ...this.state,
+      board: this.gameController.getBoard(),
+    })
   }
 
   moveTileAtPosition(rowIndex, colIndex) {
@@ -34,6 +49,8 @@ class App extends Component {
                 moveTileAtPosition={(rowIndex, colIndex) => this.moveTileAtPosition(rowIndex, colIndex)}
                 isSolved={this.gameController.isPuzzleSolved()}
         />
+        <StyledButton onClick={() => this.restartGame()}>Restart</StyledButton>
+
       </PuzzleWrapper>
     );
   }
