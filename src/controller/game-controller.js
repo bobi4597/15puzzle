@@ -1,9 +1,11 @@
 import { initializeBoard } from './logic/puzzle-initializer';
+import {shuffleBoard} from "./logic/puzzle-shuffler";
 
 export default class GameController {
   constructor(size) {
+    this.size = size;
     this.board = initializeBoard(size);
-    // fixme: also shuffle the board
+    shuffleBoard(this.board);
   }
 
   getBoard() {
@@ -11,7 +13,8 @@ export default class GameController {
   }
 
   resetPuzzle() {
-    // fixme: should reset/shuffle the puzzle
+    this.board = initializeBoard(this.size);
+    shuffleBoard(this.board);
   }
 
   moveTile(rowIndex, colIndex) {
