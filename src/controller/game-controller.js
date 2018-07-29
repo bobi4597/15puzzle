@@ -1,6 +1,7 @@
 import { initializeBoard } from './logic/puzzle-initializer';
 import {shuffleBoard} from "./logic/puzzle-shuffler";
 import {isSolved} from "./logic/puzzle-solver";
+import {printPuzzle} from "./logic/puzzle-printer";
 
 export default class GameController {
   constructor(size) {
@@ -27,6 +28,6 @@ export default class GameController {
   }
 
   printPuzzle() {
-    // fixme: print the puzzle
+    return printPuzzle(this.board);
   }
 }
